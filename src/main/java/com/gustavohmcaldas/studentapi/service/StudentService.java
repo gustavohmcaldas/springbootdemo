@@ -30,12 +30,12 @@ public class StudentService {
 				.orElseThrow(() -> new BadRequestException("Student not found."));
 	}
 	
-	public List<Student> findByName(String firstName) {
+	public List<Student> findByFirstName(String firstName) {
 		return studentRepository.findByFirstName(firstName);
 	}
 
-	public void addStudent(StudentPostRequestBody studentPostRequestBody) {
-		studentRepository.save(StudentMapper.INSTANCE.toStudent(studentPostRequestBody));
+	public Student addStudent(StudentPostRequestBody studentPostRequestBody) {
+		return studentRepository.save(StudentMapper.INSTANCE.toStudent(studentPostRequestBody));
 	}
 
 	public void deleteStudent(Long studentId) {

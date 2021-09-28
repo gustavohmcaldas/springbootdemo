@@ -2,9 +2,11 @@ package com.gustavohmcaldas.studentapi.requests;
 
 import javax.validation.constraints.NotEmpty;
 
+import lombok.Builder;
 import lombok.Data;
 
 @Data
+@Builder
 public class StudentPostRequestBody {
 
 	@NotEmpty(message = "First name must not be empty.")

@@ -43,14 +43,13 @@ public class StudentController {
 	}
 	
 	@GetMapping(path = "/find")
-	public ResponseEntity<List<Student>> findByName(@RequestParam String firstName) {
-		return ResponseEntity.ok(studentService.findByName(firstName));
+	public ResponseEntity<List<Student>> findByFirstName(@RequestParam String firstName) {
+		return ResponseEntity.ok(studentService.findByFirstName(firstName));
 	}
 	
 	@PostMapping
 	public ResponseEntity<Student> addStudent(@RequestBody  @Valid StudentPostRequestBody studentPostRequestBody) {
-		studentService.addStudent(studentPostRequestBody);
-		return new ResponseEntity<>(HttpStatus.CREATED);
+		return new ResponseEntity<>(studentService.addStudent(studentPostRequestBody), HttpStatus.CREATED);
 	}
 	
 	@DeleteMapping(path = "/{studentId}")
