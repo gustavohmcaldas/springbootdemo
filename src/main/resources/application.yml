@@ -4,6 +4,8 @@ server:
     include-stacktrace: on_param
 
 spring:
+  application:
+    name: springboot-demo
   datasource:
     url: jdbc:mysql://localhost:3306/springbootdemo?useSSL=false&createDatabaseIfNotExist=true&allowPublicKeyRetrieval=true
     username: root
@@ -17,3 +19,15 @@ logging:
     org:
       hibernate:
        SQL: DEBUG
+       
+management:
+  endpoints:
+    web:
+      base-path: /api/v1/actuator
+      exposure:
+        include: info, health, metrics, prometheus
+
+info:
+  app: Spring Boot Demo By Gustavo Caldas
+  website: https://www.linkedin.com/in/gustavohmcaldas/
+  github: https://github.com/gustavohmcaldas/springbootdemo

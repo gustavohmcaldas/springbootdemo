@@ -19,7 +19,15 @@
 		<org.mapstruct.version>1.4.1.Final</org.mapstruct.version>
 		<springdoc-openapi-ui.version>1.5.10</springdoc-openapi-ui.version>
 	</properties>
-	<dependencies>		
+	<dependencies>
+		<dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-actuator</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>io.micrometer</groupId>
+            <artifactId>micrometer-registry-prometheus</artifactId>
+        </dependency>
 		<dependency>
 			<groupId>org.springdoc</groupId>
 			<artifactId>springdoc-openapi-ui</artifactId>
